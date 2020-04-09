@@ -99,12 +99,54 @@ public class RolaDados{
 	
 		// Imprime cada dado de acordo com o número sorteado
 		for (int i = 0; i < 5; i ++) {
-			if (vetDados[i].getLado() == 1) {
-				mostraDados += "|     |  ";
-			} else if (vetDados[i].getLado() == 2 || vetDados[i].getLado() == 3) {
-				mostraDados += "|*    |  ";
-			} else {
-				mostraDados += "|*   *|  ";
+			
+			switch (vetDados[i].getLado()) {
+				case 1:
+					mostraDados += "|     |  ";
+					break;
+				case 2: 
+					mostraDados += "|*    |  ";
+					break;
+				case 3:
+					mostraDados += "|*    |  ";
+					break;
+				case 4:
+					mostraDados += "|*   *|  ";
+					break;
+				case 5:
+					mostraDados += "|*   *|  ";
+					break;
+				case 6:
+					mostraDados += "|*   *|  ";
+					break;
+			} 			
+			if (i == 4) {
+				mostraDados += "\n";
+			}
+		}
+
+		for (int i = 0; i < 5; i ++) {
+			
+			switch (vetDados[i].getLado()) {
+				case 1:
+					mostraDados += "|  *  |  ";
+					break;
+				case 2:
+					mostraDados += "|     |  ";
+					break;
+				case 3:
+					mostraDados += "|  *  |  ";
+					break;
+				case 4:
+					mostraDados += "|     |  ";
+					break;
+				case 5:
+					mostraDados += "|  *  |  ";
+					break;
+				case 6:
+					mostraDados += "|*   *|  ";
+					break;
+			
 			}
 			if (i == 4) {
 				mostraDados += "\n";
@@ -112,31 +154,33 @@ public class RolaDados{
 		}
 
 		for (int i = 0; i < 5; i ++) {
-			if (vetDados[i].getLado() == 1 || vetDados[i].getLado() == 3 || vetDados[i]. getLado() == 5) {
-				mostraDados += "|  *  |  ";
-			} else if (vetDados[i].getLado() == 6) {
-				mostraDados += "|*   *|  ";
-			} else {
-				mostraDados += "|     |  ";
-			}
+			
+			switch (vetDados[i].getLado()) {
+				case 1:
+					mostraDados += "|     |  ";
+					break;
+				case 2:
+					mostraDados += "|    *|  ";
+					break;
+				case 3:
+					mostraDados += "|    *|  ";
+					break;
+				case 4:
+					mostraDados += "|*   *|  ";
+					break;
+				case 5:
+					mostraDados += "|*   *|  ";
+					break;
+				case 6:
+					mostraDados += "|*   *|  ";
+					break;
+			
+			}			
 			if (i == 4) {
 				mostraDados += "\n";
 			}
 		}
-
-		for (int i = 0; i < 5; i ++) {
-			if (vetDados[i].getLado() == 2 || vetDados[i].getLado() == 3) {
-				mostraDados += "|    *|  ";
-			} else if (vetDados[i].getLado() == 1) {
-				mostraDados += "|     |  ";
-			} else {
-				mostraDados += "|*   *|  ";
-			}
-			if (i == 4) {
-				mostraDados += "\n";
-			}
-		}
-
+			
 		mostraDados += "+-----+  +-----+  +-----+  +-----+  +-----+\n";
         return mostraDados;
 	}

@@ -5,7 +5,7 @@ Repository containing all my projects of the discipline using Java.
 
   O Bozó é um jogo de dados em que cada jogador tenta preencher 10 posições de um tabuleiro com o maior número de pontos possvel.
   
-## Regras 
+###### Regras 
 
   Em cada rodada, o jogador lança os 5 dados. Depois, pode escolher ficar com a pontuação que tirou ou escolher entre 1 e 5 dados para lançar novamente. Em seguida pode, se quiser, escolher mais uma vez alguns dos dados para lançar de novo.
   

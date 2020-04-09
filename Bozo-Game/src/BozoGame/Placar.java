@@ -158,6 +158,7 @@ public class Placar {
 				} else {
 					placar[7] = 0;
 				}
+				break;
 
 			case 9: // QUADRA
 				if (quadra >= 1) {

@@ -30,7 +30,7 @@ public class RolaDados{
 		for (int i = 0; i < n; i++) {
 			vetDados[i] = new Dado();
 			try {
-				Thread.sleep (i*10/3*7); // Usado para que a semente seja diferente e aumente a randomização dos dados
+				Thread.sleep (100/3*7); // Usado para que a semente seja diferente e aumente a randomização dos dados
 			} catch (Exception e) {
 				System.out.println (e);
 			}

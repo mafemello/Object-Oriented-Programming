@@ -1,7 +1,7 @@
 /*
  	Aluna: Maria Fernanda Lucio de Mello
  	NºUSP: 11320860
- 	author: @mafemello
+ 	@author mafemello
  */
 
 package BozoGame;

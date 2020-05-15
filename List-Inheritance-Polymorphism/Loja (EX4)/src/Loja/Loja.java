@@ -105,7 +105,7 @@ public class Loja {
 					prod = EntradaTeclado.leString();
 					System.out.println ("Quantidade de produtos que deseja vender: ");
 					int qntd = EntradaTeclado.leInt();
-					pesquisaProduto = l.pesquisaProduto(prod, qntd); // Procura o contato desejado na agenda
+					pesquisaProduto = l.pesquisaProduto(prod, qntd); // Procura o produtos desejado no estoque
 					
 					if (pesquisaProduto != null) {
 						if (pesquisaProduto instanceof CDs) {
@@ -232,18 +232,18 @@ public class Loja {
 	}
 	
 	
-	// Função que percorre todos os contatos para imprimir
+	// Função que percorre todos os produtos para imprimir
 	private void printaProdutos () {
-		for (Produtos p : produtos) { // Percorre todos os contatos da agenda
+		for (Produtos p : produtos) { // Percorre todos os produtos em estoque
 			if (p == null) {
 				break; 
 			}
-			printaProdutos (p); // Imprime cada um dos contatos
+			printaProdutos (p); // Imprime cada um dos produtos
 		}
 	}
 	
 	
-	// Função printa todos os contatos
+	// Função printa todos os produtos
 	private void printaProdutos (Produtos p) {
 		
 		if (p != null && p.getEstaNaLoja()) {
@@ -263,10 +263,10 @@ public class Loja {
 		System.out.println();
 	}
 
-	// Função que pesquisa os contatos
+	// Função que pesquisa os produtos
 	private Produtos pesquisaProduto (String prod) {
 		
-		for (Produtos p : produtos) { // Percorre todos os contatos 
+		for (Produtos p : produtos) { // Percorre todos os produtos 
 			if (p == null) break; // Se igual a null, para
 			if (p.getEstaNaLoja()) { // Se existe, imprime
 				if (p.getNome().equals(prod) || p.getCB().contentEquals(prod)) {
@@ -283,7 +283,7 @@ public class Loja {
 			return null;
 		}
 	
-		for (Produtos p : produtos) { // Percorre todos os contatos 
+		for (Produtos p : produtos) { // Percorre todos os produtos 
 			if (p == null) break; // Se igual a null, para
 			if (p.getEstaNaLoja()) { // Se existe, imprime
 				if (p.getNome().equals(prod) || p.getCB().contentEquals(prod)) {

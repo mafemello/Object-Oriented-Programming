@@ -12,8 +12,8 @@ package BozoGame;
  */
 public class Dado {
 
-	private int lado; // Representa a quantidade de lados
-	private int faceAtual; // Representa a face rolada
+	public int lado; // Representa a quantidade de lados
+	public int faceAtual; // Representa a face rolada
 	Random auxiliar; // Cria numero aleatorio
 
 	// Cria objeto com numero qualquer de lados.
@@ -23,15 +23,19 @@ public class Dado {
 	}
 
 	// Cria um dado com 6 lados (um cubo).
-	public Dado () {
+	public Dado () { 
 		this.lado = 6;
 		auxiliar = new Random();
-	}
+	} 
 
 	// Recupera (retorna) o último número selecionado.
 	public int getLado () {
 		return faceAtual;
 	}
+	
+	 public void setLado (int lado) {
+	        this.lado = lado;
+	 }
 
 	/* 
 	 	Simula a rolagem do dado por meio de um gerador aleatório. 
@@ -87,7 +91,9 @@ public class Dado {
 						"|     |" +
 						"| *** |" +
 						"+-----+";
+			
+			default: 
+				return ""+faceAtual;
 		}	
-		return null;
 	}
 }

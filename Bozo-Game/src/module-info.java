@@ -1,2 +1,3 @@
 module bozoGame {
+	requires junit;
 }

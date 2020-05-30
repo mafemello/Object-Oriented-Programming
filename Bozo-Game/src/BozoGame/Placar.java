@@ -5,7 +5,7 @@
  */
 
 package BozoGame;
-import java.util.Arrays;
+
 
 /*
  	Esta classe representa o placar de um jogo de Bozó. Permite que combinações de dados 
@@ -31,6 +31,12 @@ public class Placar {
 		// Se os paramentos forem invalidos ou se a posicao ja estiver ocupada, existe erro.
 		if (posicao < 1 || posicao > 10 || placar[posicao-1] != -1) {
 			throw new IllegalArgumentException ("Parâmetros inválidos ou a posição escolhida já está ocupada. Por favor, tente novamente.\n"); 
+		}
+		
+		int[] aux = new int[7];
+		
+		for(int i = 0; i < dados.length; i++){
+			aux[dados[i]]++;
 		}
 		
 		// A frequência de dados será utilizada para calcular os pontos da quadra e da quina
@@ -121,33 +127,29 @@ public class Placar {
 				break;
 
 			case 7: // FULL HAND
-				Arrays.sort(dados); // Ordena os valores dos dados para compara-los facilmente
-				boolean flagFullHand = false;
-
-				// Se a trinca estiver no começo do array ordenado
-				if (dados[0] == dados[1] && dados[0] == dados[2] && dados[3] == dados[4]) {
-					flagFullHand = true;
+				boolean flagDupla = false;
+				boolean flagTrinca = false;
+				
+				for(int i = 1; i < 7; i++){
+					if(aux[i] == 2) flagDupla = true;
+					else if(aux[i] == 3) flagTrinca = true;
 				}
-
-				// Se a dupla estiver no começo do array ordenado
-				if (dados[0] == dados[1] && dados[2] == dados[3] && dados[2] == dados[4]) {
-					flagFullHand = true;
-				}
-
-				if (flagFullHand == true) {
+				
+				if (flagDupla && flagTrinca) {
 					placar[6] = 15;
 				} else {
 					placar[6] = 0;
 				}
 				break;
 
+			
 			case 8: // SEQUENCIA (de 1 a 5 ou de 2 a 6)
 				int contador8 = 0;
 				
 				// Compara se os números são diferentes
 				for (int i = 0; i < 5; i ++) {
 					for (int j = 0; j < 5; j++) {
-						if (dados[i] == dados[j]){
+						if (dados[i] == dados[j]){ // se forem diferentes, o numero maximo de iguais eh 5
 							contador8++;
 						}
 					}
@@ -186,7 +188,9 @@ public class Placar {
 		int resultadoSomaFinal = 0;
 
 		for (int i = 0; i < 10; i++) {
-			resultadoSomaFinal += placar[i];
+			if (placar[i] > 0) {
+				resultadoSomaFinal += placar[i];
+			}	
 		}
 		return resultadoSomaFinal;
 	}
@@ -208,7 +212,7 @@ public class Placar {
 							   "        +-----------+         ";
 
 */
-
+		
 		String placarPronto = "\n";
 		getScore();
 
@@ -291,7 +295,7 @@ public class Placar {
 		}
 		placarPronto += "\n";
 		placarPronto += "         +-------------+        \n\n";
-
+		
 		return placarPronto;
 	}
 }

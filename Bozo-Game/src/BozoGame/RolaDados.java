@@ -3,7 +3,7 @@
  	NºUSP: 11320860
  	@author mafemello
  */
-
+ 
 package BozoGame;
 import java.lang.Integer;
 import java.lang.String;
@@ -11,11 +11,11 @@ import java.lang.String;
 /*
  	Essa é uma classe auxiliar que permite gerencia um conjunto de vários dados simultaneamente. 
  	Operações como rolar alguns dos dados ou exibir o resultado de todos eles, são implementadas.
- */
+ */ 
 public class RolaDados{
 
-	private int quantidadeDados; // Quantidade de dados a serem rolados
-	private Dado vetDados[]; // Vetor de dados que serão rolados
+	public int quantidadeDados; // Quantidade de dados a serem rolados
+	public Dado vetDados[]; // Vetor de dados que serão rolados
 
 	/*
 	 	Construtor que cria e armazena vários objetos do tipo Dado. 
@@ -45,7 +45,7 @@ public class RolaDados{
 			facesMostrar[i] = vetDados[i].rolar();
 		}
 		return facesMostrar;
-	}
+	} 
 
 	// Rola alguns dos dados (escolhidos pelo usuário).
 	public int[] rolar (boolean[] quais) {
@@ -56,7 +56,7 @@ public class RolaDados{
 				facesMostrar[i] = vetDados[i].rolar();
 			} else { // apenas exibir o valor antigo dos dados nao escolhidos
 				facesMostrar[i] = vetDados[i].getLado();
-			}
+			} 
 		}
 		return facesMostrar;
 	}
@@ -66,7 +66,7 @@ public class RolaDados{
 	public int[] rolar (java.lang.String s) {
 		int facesMostrar[] = new int [quantidadeDados];
 		String espacos[] = s.split(" ");
-		int auxiliar;
+		int auxiliar; 
 		
 		// Transforma a String passa em int
 		for (int i = 0; i < espacos.length; i ++) {
@@ -85,22 +85,22 @@ public class RolaDados{
 		}
 		return facesMostrar;
 	}
-
+	
 	
 	/*
 	 	Usa a representação em string do dados, para mostrar o valor de todos os dados do conjunto. 
 	 	Exibe os dados horisontalmente.
 	 */
 	@Override
-	public java.lang.String toString () {
+	public java.lang.String toString () {  
 		
 		// Exibe para o usuário os dados e os índices que o representam
 		String mostraDados = " 1        2        3        4        5\n+-----+  +-----+  +-----+  +-----+  +-----+\n";
-	
+	 
 		// Imprime cada dado de acordo com o número sorteado
 		for (int i = 0; i < 5; i ++) {
 			
-			switch (vetDados[i].getLado()) {
+			switch (vetDados[i].getLado()) { 
 				case 1:
 					mostraDados += "|     |  ";
 					break;
@@ -180,7 +180,7 @@ public class RolaDados{
 				mostraDados += "\n";
 			}
 		}
-			
+
 		mostraDados += "+-----+  +-----+  +-----+  +-----+  +-----+\n";
         return mostraDados;
 	}
